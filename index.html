@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelangelo Expo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Spectral&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="backdrop"></div>
+            <a href="#" id="logo">
+                <img src="assets/img/logo-dark.svg" alt="logo">
+            </a>
+            <input type="checkbox" name="dropdown" id="dropdown">
+            <label><span id="dropdown-menu"></span></label>
+            <ul>
+                <li><a class="cta" href="#">tickets</a></li>
+                <li homeLink><a href="#">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#">info</a></li>
+                <li><a href="#">faq</a></li>
+                <li><a href="#">gallery</a></li>
+                <li><a href="#">gift shop</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <section id="hero">
+                <div id="hero-carousel">
+                    <img src="assets/img/home/hero/david.jpg" alt="Michelangelo's David" id="slide-1">
+                    <img src="assets/img/home/hero/adam.jpg" alt="Michelangelo's David" id="slide-2">
+                    <img src="assets/img/home/hero/pieta.jpg" alt="Michelangelo's David" id="slide-3">
+                </div>
+                <div class="carousel-nav">
+                    <a href="#slide-1" class="active">1</a>
+                    <a href="#slide-2">2</a>
+                    <a href="#slide-3">3</a>
+                </div>
+            </div>
+            <div class="cta">
+                <h1>Michelangelo Expo</h1>
+                <a href="#">tickets</a>
+            </section>
+            <section id="about" class="marble">
+                <div class="wrapper">
+                    <h2>Who was Michelangelo</h2>
+                    <img src="assets/img/home/michelangelo.jpg" alt="Portrait of the artist Michelangelo">
+                    <!-- <div class="content"> -->
+                        <p>Michelangelo di Lodovico Buonarroti Simoni, known simply as Michelangelo, was a towering figure of the High Renaissance, an Italian polymath whose talents encompassed sculpture, painting, architecture, and poetry. Born on March 6, 1475, in the Republic of Florence, he was inspired by classical antiquity, and his profound impact on Western art remains unparalleled. Often seen as an archetype of the "Renaissance man," Michelangelo's work is distinguished by its robustness and delicate detail.</p>
+                        <p>Michelangelo's fame was established early in his career, with iconic sculptures such as the Pietà and David completed by his thirties. His monumental contributions to art include the riveting frescoes on the ceiling of the Sistine Chapel and the Last Judgment on its altar wall. His architectural prowess was demonstrated in the design of the Laurentian Library, characterized by its innovative Mannerist style, and his work as an architect for St. Peter's Basilica in Rome.</p>
+                        <p>Michelangelo's creative genius was recognized within his lifetime, with contemporaries dubbing him "Il Divino" or "the divine one," and his ability to instill a sense of awe through his art led to the rise of Mannerism. Despite his engagement in numerous grand projects, he retained a simple personal life, with an austere nature and a steadfast focus on his art until his death on February 18, 1564, in Rome. His works continue to attract admiration and study, embodying a legacy that speaks of the sublime potential of human creativity.</p>
+                    <!-- </div> -->
+                </div>
+            </section>
+            <section id="highlights" class="fresco">
+                <div class="wrapper">
+                    <h2>Exhibit Highlights</h2>
+                    <div class="carousel-wrapper">
+                        <div class="carousel">
+                            <img src="assets/img/home/highlights/sistine.jpg" alt="Sistine Chapel Exhibit">
+                            <img src="assets/img/home/highlights/david.jpg" alt="David Exhibit">
+                            <img src="assets/img/home/highlights/laPieta.jpg" alt="La Pieta Exhibit">
+                            <img src="assets/img/home/highlights/madonna.jpg" alt="Madonna Exhibit">
+                            <img src="assets/img/home/highlights/Moses.jpg" alt="Moses Exhibit">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="info" class="marble">
+                <div class="wrapper">
+                    <h2>Information</h2>                  
+                        <div class="practical">
+                            <h3>Practical Information</h3>
+                            <ul>
+                                <li><strong>Exhibition Start Date:</strong> Ongoing from March 2024</li>
+                                <li><strong>Visiting Hours:</strong></li>
+                                <li>Monday to Thursday: 9 a.m. – 6 p.m. (last admission at 5 p.m.)</li>
+                                <li>Friday: 9 a.m. – 10 p.m. (last admission at 9 p.m.)</li>
+                                <li>Saturday: 8 a.m. – 10 p.m. (last admission at 9 p.m.)</li>
+                                <li>Sunday: 8 a.m. – 7 p.m. (last admission at 6 p.m.)</li>
+                                <li>Visit Duration: Recommend 1 hour and 30 minutes to fully enjoy the exhibition</li>
+                                <li>Venue: The Renaissance Hall, Central Art District</li>
+                                <li>Age Suitability: Open to all ages, with interactive sections for children</li>
+                                <li><strong>Special Notes:</strong></li>
+                                <li>Free entry for children under 5.</li>
+                                <li>Wheelchair accessible throughout the venue.</li>
+                                <li>Audio guides available in multiple languages for an immersive experience.</li>
+                            </ul>
+                        </div>
+                        <div class="location">
+                            <h3>Location</h3>
+                            <p>100 N 3rd St, Phoenix, AZ 85004</p>
+                            <p><a href="https://www.google.com/maps?ll=33.412073,-111.970274&z=18&t=m&hl=en&gl=US&mapclient=embed&cid=1180627760763458050" target="_blank">Get Directions</a></p>
+                            <p>Situated in the heart of downtown Phoenix, the Phoenix Convention Center is a premier destination for various events, including our exclusive Michelangelo exhibition. Located at the intersection of North 3rd Street and East Monroe Street, this expansive venue is a hub of culture and activity, boasting state-of-the-art facilities. The Convention Center is easily accessible and surrounded by various dining options, shops, and entertainment choices. Its modern architecture and spacious galleries provide the perfect setting to showcase Michelangelo's timeless masterpieces. Additionally, visitors can enjoy stunning views of the Phoenix skyline and the nearby South Mountain Park, adding to the overall experience of the exhibition.</p>
+                        </div>
+                        <iframe title="Expo Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.4282761547565!2d-111.97284922294594!3d33.412077051259146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0fb61010cbeb%3A0x10626eb174455202!2sphoenix%20convention%20100%20North%203rd%20st!5e0!3m2!1sen!2sus!4v1707858173855!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+            <section id="faq" class="fresco">
+                <div class="wrapper">
+                    <h2>FAQs</h2>
+                    <input type="checkbox" id="see-faq">
+                    <label for="see-faq" class="dropdown-faq btn"><span> </span>FAQs</label>
+                    <div class="faqs">
+                        <ul class="the-experience">
+                            <li><h3>The Experience</h3></li>
+                            <li>
+                                <h4>What Can I Expect from the Michelangelo Exhibition?</h4>
+                                <p>Immerse yourself in the world of Michelangelo, featuring detailed replicas of his masterpieces, including sculptures, paintings, and architectural designs. Expect an interactive journey through his life and works, enhanced by multimedia presentations and educational content.</p>
+                            </li>
+                            <li>
+                                <h4>Where is the Exhibition Located?</h4>
+                                <p>The Phoenix Convention Center hosts the exhibition at 100 N 3rd St, Phoenix, AZ 85004. <a href="https://www.google.com/maps/dir//100+N+3rd+St,+Phoenix,+AZ+85004" target="_blank">Get directions.</a></p>
+                            </li>
+                            <li>
+                                <h4>Indoor or Outdoor Venue?</h4> 
+                                <p>The exhibition is held indoors, within the spacious and climate-controlled halls of the Phoenix Convention Center.</p> 
+                            </li>
+                        </ul>
+                        <ul class="access">
+                            <li>
+                                <h3>Access</h3>
+                            </li>
+                        </ul>
+                        <ul class="tickets">
+                            <li>
+                                <h3>Tickets</h3>
+                            </li>
+                        </ul>
+                        <ul class="misc">
+                            <li>
+                                <h3>Miscellaneous</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="tickets" class="marble"></section>
+        <section id="giftshop" class="marble"></section>
+        <section id="item" class="marble"></section>
+        <section id="cart" class="marble"></section>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <div>
+                <a href="#" id="logo"><img src="assets/img/logo-light.svg" alt="logo"></a>
+                <a href="#" class="btn">tickets</a>
+            </div>
+            <ul class="action">
+                <li><h4>Take Action</h4></li>
+                <li><a href="#">tickets</a></li>
+                <li><a href="#">gift shop</a></li>
+            </ul>
+            <ul class="learn">
+                <li><h4>Learn</h4></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">location</a></li>
+                <li><a href="#">information</a></li>
+                <li><a href="#">faq</a></li>
+                <li><a href="#">gallery</a></li>
+            </ul>
+            <ul class="connect">
+                <li><h4>Connect</h4></li>
+                <li>
+                    <ul class="social">
+                        <li class="fb">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+                            </a>
+                        </li>
+                        <li class="ig">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <defs>
+                                        <radialGradient id="igGradient" cx="30%" cy="107%" r="150%">
+                                            <stop offset="0%" style="stop-color:#fdf497" />
+                                            <stop offset="5%" style="stop-color:#fdf497" />
+                                            <stop offset="45%" style="stop-color:#fd5949" />
+                                            <stop offset="60%" style="stop-color:#d6249f" />
+                                            <stop offset="90%" style="stop-color:#285AEB" />
+                                        </radialGradient>
+                                    </defs>
+                                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="x">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+        
+</body>
+</html>
