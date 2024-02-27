@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   /* colors */
   --marble-white: #f2edeb;
@@ -32,79 +33,145 @@
   cursor: pointer;
   text-decoration: none;
 }
+.btn:disabled {
+  background-color: var(--sculpture-gray);
+  color: var(--chiaroscuro-charcoal);
+}
 
 .arrow {
   box-sizing: border-box;
-  --length: 8px;
-  height: var(--length);
+  --length: 24px;
   width: var(--length);
-  --border-color: $charcoal;
-  border: none;
-  box-shadow: 2px 2px 0px var(--border-color);
-  color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
+  height: var(--length);
+  fill: var(--chiaroscuro-charcoal);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding-inline: calc((var(--length) - var(--width)) / 2);
+  padding-block: calc((var(--length) - var(--height)) / 2);
+  background: none;
 }
-.arrow.prev {
-  --border-color: var(--chiaroscuro-charcoal);
-  transform: translateY(16px) rotate(135deg);
+.arrow:not(.double) {
+  --width: var(--length);
+  --height: var(--length);
 }
-.arrow.next {
-  --border-color: var(--chiaroscuro-charcoal);
-  transform: translateY(16px) rotate(315deg);
+.arrow svg {
+  width: var(--width);
+  height: var(--height);
 }
-.arrow.double::before {
-  content: "";
-  display: block;
-  --length: 7px;
-  height: var(--length);
-  width: var(--length);
-  box-shadow: 2px 2px 0px var(--border-color);
-  position: absolute;
-  top: 4px;
+.arrow.double {
+  --width: 14px;
+  --height: 12px;
+}
+.arrow path {
+  fill: var(--chiaroscuro-charcoal);
+}
+.arrow.limit {
+  cursor: default;
+}
+.arrow.limit path {
+  fill: var(--sculpture-gray);
+}
+
+.control {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+.control button {
+  box-sizing: border-box;
+  --diameter: 24px;
+  width: var(--diameter);
+  height: var(--diameter);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.control button svg {
+  fill: var(--chiaroscuro-charcoal);
+}
+.control button svg path {
+  fill: var(--marble-white);
+}
+.control button.limit {
+  border: 2px solid var(--chiaroscuro-charcoal);
+  cursor: default;
+}
+.control button.limit svg {
+  fill: var(--marble-white);
+}
+.control button.limit svg path {
+  fill: var(--chiaroscuro-charcoal);
 }
 
 body {
   margin: 0;
   font-family: var(--text-base);
+  background-color: var(--chiaroscuro-charcoal);
+  background-image: url("assets/img/texture/marble-1.png");
+  background-blend-mode: overlay;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--text-heading);
-  --font-size: calc(var(--font-scale) * var(--font-factor));
+  --min-font-size: 16px;
+  --max-font-size: 80px;
+  --target-font-size: 6vw;
+  --font-size: clamp(var(--min-font-size), var(--target-font-size), var(--max-font-size));
   --max-margin: 32px;
   margin-top: 0;
   font-size: var(--font-size);
   font-weight: 700;
-  letter-spacing: calc(var(--font-size) / 8);
+  letter-spacing: calc(var(--font-size) / 16);
   margin-bottom: clamp(0px, var(--font-size) / 2, var(--max-margin));
+  color: var(--chiaroscuro-charcoal);
 }
 
 h1 {
+  --min-font-size: 16px;
+  --max-font-size: 80px;
+  --target-font-size: 6vw;
   --font-scale: 5;
   text-transform: uppercase;
   font-family: var(--text-heading);
+  letter-spacing: calc(var(--font-size) / 8);
 }
 
 h2 {
+  --min-font-size: 24px;
+  --max-font-size: 80px;
+  --target-font-size: 7vw;
   font-family: var(--text-base);
   --font-scale: 3.5;
   text-transform: capitalize;
 }
 
 h3 {
-  --font-scale: 2;
+  --min-font-size: 24px;
+  --max-font-size: 80px;
+  --target-font-size: 3vw;
   --max-margin: 16px;
 }
 
 h4 {
-  --font-scale: 1.5;
+  --min-font-size: 24px;
+  --max-font-size: 80px;
+  --target-font-size: 2vw;
 }
 
 p {
-  --font-size: calc(var(--font-scale) * var(--font-factor));
-  --font-scale: 2;
-  font-size: clamp(16px, var(--font-size), 24px);
+  --min-font-size: 16px;
+  --max-font-size: 24px;
+  --target-font-size: 2vw;
+  --font-size: clamp(var(--min-font-size), var(--target-font-size), var(--max-font-size));
+  font-size: var(--font-size);
 }
 
 ul {
@@ -112,9 +179,11 @@ ul {
 }
 
 li {
-  --font-size: calc(var(--font-scale) * var(--font-factor));
-  --font-scale: 2;
-  font-size: clamp(16px, var(--font-size), 24px);
+  --min-font-size: 16px;
+  --max-font-size: 24px;
+  --target-font-size: 2vw;
+  --font-size: clamp(var(--min-font-size), var(--target-font-size), var(--max-font-size));
+  font-size: var(--font-size);
   list-style-type: none;
 }
 
@@ -135,31 +204,28 @@ section:not(#hero):not(:has(section)) .wrapper {
   padding-block: 2.5rem;
 }
 
-@media (width < 1151px) {
-  :root {
-    --font-factor: 12px;
-  }
+.hidden {
+  display: none;
 }
+
+:disabled {
+  cursor: default;
+}
+
 @media (width < 871px) {
-  :root {
-    --font-factor: 8px;
+  h1 {
+    text-align: center;
   }
   h2 {
-    --font-scale: 4;
     text-align: center;
   }
 }
 @media (width < 592px) {
-  :root {
-    --font-factor: 6px;
+  p {
+    --min-font-size: 24px;
   }
-  h2 {
-    --font-scale: 5;
-  }
-}
-@media (width < 452px) {
-  :root {
-    --font-factor: 4px;
+  li {
+    --min-font-size: 20px;
   }
 }
 header {
@@ -213,7 +279,7 @@ nav ul li a {
   --font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--chiaroscuro-charcoal);
+  color: black;
   border: 1px solid var(--chiaroscuro-charcoal);
   border-radius: 8px;
   padding: 8px 16px;
@@ -237,9 +303,6 @@ nav ul li a.active {
   background-color: rgba(59, 58, 57, 0.4980392157);
 }
 nav ul li[homeLink] {
-  display: none;
-}
-nav input {
   display: none;
 }
 nav label {
@@ -317,9 +380,13 @@ nav label span::after {
     display: block;
   }
   nav ul {
+    --links: 6;
+    --link-height: 68px;
     box-sizing: border-box;
     transition: transform 800ms var(--bezier);
     top: -476px;
+    top: -404px;
+    top: calc(var(--link-height) * -1 * var(--links) + 3px);
     z-index: -10;
     position: absolute;
     left: 0;
@@ -357,6 +424,7 @@ nav label span::after {
     border-radius: 0;
     text-align: center;
     padding: 8px 0;
+    color: var(--marble-white);
   }
   nav ul li a.cta {
     background-color: none;
@@ -389,9 +457,6 @@ nav label span::after {
 }
 /* Footer */
 footer {
-  background-color: var(--chiaroscuro-charcoal);
-  background-image: url("assets/img/texture/marble-1.png");
-  background-blend-mode: overlay;
   margin: 0 auto;
 }
 footer .wrapper {
@@ -459,11 +524,24 @@ footer .social .ig svg {
   --fill-color: url(#igGradient);
 }
 
-@media (width < 1337px) {
+@media (width < 820px) {
   footer .wrapper {
     padding-inline: 16px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+    align-content: center;
     gap: 20px;
+  }
+  footer .wrapper div, footer .wrapper ul {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  footer .wrapper div img, footer .wrapper ul img {
+    width: 100%;
+  }
+  footer .wrapper div a, footer .wrapper ul a {
+    font-size: 24px;
   }
 }
 #hero {
@@ -485,6 +563,7 @@ footer .social .ig svg {
   margin-top: 310px;
   margin-top: 0;
   margin-bottom: 0;
+  color: var(--marble-white);
   filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2666666667));
 }
 #hero .cta a {
@@ -666,10 +745,6 @@ footer .social .ig svg {
     min-height: 300px;
   }
 }
-#see-faq {
-  display: none;
-}
-
 .dropdown-faq {
   margin-block: 40px;
 }
@@ -733,14 +808,14 @@ footer .social .ig svg {
   display: grid;
   gap: 16px;
 }
-.dates div:not(.calendar) {
+.dates div:not(.calendar):not(.tickets) {
   display: flex;
 }
-.dates div:not(.calendar).times {
+.dates div:not(.calendar):not(.tickets).times {
   gap: 8px;
   overflow-x: scroll;
 }
-.dates div:not(.calendar).times button {
+.dates div:not(.calendar):not(.tickets).times button {
   box-sizing: border-box;
   color: var(--chiaroscuro-charcoal);
   border-radius: 6px;
@@ -753,15 +828,15 @@ footer .social .ig svg {
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
-.dates div:not(.calendar).times button.active {
+.dates div:not(.calendar):not(.tickets).times button.active {
   background-blend-mode: overlay;
   background-color: var(--renaissance-gold);
   background-image: url("assets/img/texture/fresco-1.png");
 }
-.dates div:not(.calendar).arrows {
+.dates div:not(.calendar):not(.tickets).arrows {
   gap: 16px;
   justify-content: center;
-  transform: translateY(-150%);
+  align-items: center;
 }
 
 .calendar {
@@ -771,11 +846,11 @@ footer .social .ig svg {
   border: 1px solid var(--burnt-gold);
 }
 .calendar .header {
+  justify-content: center;
   box-sizing: border-box;
   background-blend-mode: overlay;
   background-color: var(--renaissance-gold);
   background-image: url("assets/img/texture/fresco-1.png");
-  text-align: center;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   padding: 8px 10px;
@@ -789,12 +864,16 @@ footer .social .ig svg {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   gap: 20px;
   padding: 8px 16px;
 }
 .calendar .months button {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
+}
+.calendar .months button.limit {
+  cursor: default;
 }
 .calendar .months .month {
   box-sizing: border-box;
@@ -836,11 +915,11 @@ footer .social .ig svg {
 .calendar ul.weekdays li {
   font-weight: 600;
 }
-.calendar ul.week li {
+.calendar ul.week li:not(.blank) {
   border-radius: 6px;
   cursor: pointer;
 }
-.calendar ul.week li.active {
+.calendar ul.week li:not(.blank).active {
   border: 1px solid var(--burnt-gold);
   background-blend-mode: overlay;
   background-color: var(--renaissance-gold);
@@ -867,11 +946,19 @@ hr:first-of-type, hr:last-of-type {
   border: 1px solid var(--sculpture-gray);
 }
 
+.tickets, .cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-block: 16px;
+}
+
 .ticket {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: var(--text-button);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -879,9 +966,7 @@ hr:first-of-type, hr:last-of-type {
   gap: 16px;
 }
 .ticket span:first-child {
-  --diameter: 16px;
-  border: 1px solid var(--chiaroscuro-charcoal);
-  border-radius: 50%;
+  --diameter: 24px;
   width: var(--diameter);
   height: var(--diameter);
   display: flex;
@@ -889,44 +974,264 @@ hr:first-of-type, hr:last-of-type {
   align-items: center;
   cursor: pointer;
 }
+.ticket span:first-child svg {
+  fill: var(--chiaroscuro-charcoal);
+}
 .ticket > div:first-child {
   display: flex;
-  justify-content: space-between;
   flex-grow: 99999;
+  gap: 16px;
+}
+.ticket > div:first-child:has(div) {
+  justify-content: space-between;
 }
 .ticket > div:first-child div {
   display: flex;
   gap: 16px;
   justify-content: flex-start;
 }
-.ticket .control {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-.ticket .control button {
-  --diameter: 24px;
-  width: var(--diameter);
-  height: var(--diameter);
-  border-radius: 50%;
-  border: none;
-  background-color: var(--chiaroscuro-charcoal);
-  color: var(--marble-white);
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-}
 
 .total {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+.total div {
+  display: flex;
+  width: 298px;
+  justify-content: space-between;
+  align-items: center;
+}
+.total .price {
+  flex: 1 0 0;
 }
 .total span {
   font-family: var(--text-button);
+  color: var(--Chiaroscuro-Charcoal, #3B3A39);
+  text-align: right;
+  font-feature-settings: "calt" off;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 1px;
+  transform: translateY(-4px);
 }
 
 .btn {
   padding: 8px 12px;
+}
+
+@media (width < 871px) {
+  .grid-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+.merch {
+  --min-width: 274px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-width), 1fr));
+}
+.merch .item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--text-button);
+}
+.merch .item img {
+  width: 100%;
+}
+.merch .item span {
+  color: var(--chiaroscuro-charcoal);
+}
+.merch .item span.description {
+  align-self: stretch;
+}
+.merch .item span.price {
+  font-weight: 700;
+}
+.merch .item .sizes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.merch .item .sizes button {
+  box-sizing: border-box;
+  --length: 2rem;
+  display: flex;
+  width: var(--length);
+  height: var(--length);
+  justify-content: center;
+  align-items: center;
+}
+.merch .item .sizes button.active {
+  background-color: var(--chiaroscuro-charcoal);
+  color: var(--marble-white);
+  border: none;
+}
+.merch .item div:not(.control) > button {
+  text-transform: uppercase;
+  border-radius: 6px;
+  font-family: var(--text-button);
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: 1px solid var(--chiaroscuro-charcoal);
+}
+.merch .item div:not(.control) > button.add {
+  padding: 0.5rem 0.75rem;
+}
+.merch .item div:has(.control) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart {
+  position: sticky;
+  top: 40px;
+  height: min-content;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--text-button);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--chiaroscuro-charcoal);
+  gap: 16px;
+}
+.cart-item span:first-child {
+  --diameter: 24px;
+  width: var(--diameter);
+  height: var(--diameter);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.cart-item span:first-child svg {
+  fill: var(--chiaroscuro-charcoal);
+}
+.cart-item .price {
+  text-align: right;
+}
+.cart-item > div:first-child {
+  display: flex;
+  width: 298px;
+  gap: 16px;
+}
+.cart-item > div:first-child:has(div) {
+  justify-content: space-between;
+}
+.cart-item > div:first-child div {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  display: grid;
+  gap: 8px;
+}
+form:has(input:checked) .billing {
+  display: none;
+}
+form > div {
+  display: flex;
+  flex-direction: column;
+  display: grid;
+  gap: 8px;
+}
+form > div label {
+  font-family: var(--text-button);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+form > div input {
+  height: 3rem;
+  border-radius: 6px;
+  background-color: var(--marble-white);
+  font-family: var(--text-base);
+  font-size: 24px;
+  outline-color: var(--chiaroscuro-charcoal);
+}
+form > div > div {
+  display: grid;
+  gap: 16px;
+}
+form > div > div:has(#state), form > div > div:has(#state-bill) {
+  grid-template-columns: 1fr 160px 1fr;
+}
+form > div > div:has(input[type=checkbox]) {
+  justify-content: flex-start;
+  align-items: center;
+}
+form > div > div:has(input[type=checkbox]) label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+form > div > div:has(input[type=checkbox]) label::before, form > div > div:has(input[type=checkbox]) label::after {
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+  border: 1px solid var(--chiaroscuro-charcoal);
+  border-radius: 6px;
+  order: 3;
+}
+form > div > div:has(input[type=checkbox]) label::before {
+  display: flex;
+  content: "";
+}
+form > div > div:has(input[type=checkbox]) label::after {
+  display: none;
+  content: "✓";
+  background-color: var(--chiaroscuro-charcoal);
+  color: var(--marble-white);
+}
+form > div > div:has(input[type=checkbox]) input:checked ~ label::before {
+  display: none;
+}
+form > div > div:has(input[type=checkbox]) input:checked ~ label::after {
+  display: flex;
+}
+form > div > div div {
+  display: flex;
+  flex-direction: column;
+}
+form > div > div div:first-child, form > div > div div:last-child {
+  flex-grow: 9999;
+}
+
+@media (width < 1246px) {
+  .grid-wrapper:has(form) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (width < 1208px) {
+  .grid-wrapper:has(form) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+@media (max-width: 800px) {
+  form > div > div:has(div > #state), form > div > div:has(div > #state-bill) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
 }
