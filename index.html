@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Michelangelo Expo</title>
+    <meta name="author" content="Michael Rubi">
+    <meta name="description" content="Single Page Website for GIT480 Final. Content features an Art Exhibit Ticketing Website featuring the works of Michelangelo">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Spectral&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- <script type="module" src="./assets/js/reactive.js" defer></script> -->
+    <script type="module" src="./assets/js/index.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="backdrop"></div>
-            <a href="#" id="logo">
+            <a href="#home" id="logo">
                 <img src="assets/img/logo-dark.svg" alt="logo">
             </a>
             <input type="checkbox" name="dropdown-nav" id="dropdown-nav" class="hidden">
@@ -41,10 +46,10 @@
                     <a href="#slide-2">2</a>
                     <a href="#slide-3">3</a>
                 </div>
-            </div>
-            <div class="cta">
-                <h1>Michelangelo Expo</h1>
-                <a href="#">tickets</a>
+                <div class="cta">
+                    <h1>Michelangelo Expo</h1>
+                    <a href="#tickets">tickets</a>
+                </div>
             </section>
             <section id="about" class="marble">
                 <div class="wrapper">
@@ -108,7 +113,9 @@
                     <label for="see-faq" class="dropdown-faq btn"><span> </span>FAQs</label>
                     <div class="faqs">
                         <ul class="the-experience">
-                            <li><h3>The Experience</h3></li>
+                            <li>
+                                <h3>The Experience</h3>
+                            </li>
                             <li>
                                 <h4>What Can I Expect from the Michelangelo Exhibition?</h4>
                                 <p>Immerse yourself in the world of Michelangelo, featuring detailed replicas of his masterpieces, including sculptures, paintings, and architectural designs. Expect an interactive journey through his life and works, enhanced by multimedia presentations and educational content.</p>
@@ -121,27 +128,99 @@
                                 <h4>Indoor or Outdoor Venue?</h4> 
                                 <p>The exhibition is held indoors, within the spacious and climate-controlled halls of the Phoenix Convention Center.</p> 
                             </li>
+                            <li>
+                                <h4>Duration of the Visit?</h4> 
+                                <p>The visit typically lasts around 1 hour and 30 minutes, allowing ample time to appreciate Michelangelo's artworks fully.</p> 
+                            </li>
+                            <li>
+                                <h4>Are There Any Interactive Elements?</h4> 
+                                <p>Yes, the exhibition includes various interactive elements, such as digital touchscreens, virtual reality experiences, and educational workshops.</p> 
+                            </li>
+                            <li>
+                                <h4>Food and Beverage Availability?</h4> 
+                                <p>Inside the exhibition, there is a café offering Italian-inspired refreshments. Additionally, a wide range of dining options surround the convention center.</p> 
+                            </li>
+                            <li>
+                                <h4>Is There Merchandise for Sale?</h4> 
+                                <p>Yes, a gift shop featuring Michelangelo-themed merchandise, including replicas, books, and souvenirs, is available at the venue and online.</p> 
+                            </li>
                         </ul>
                         <ul class="access">
                             <li>
                                 <h3>Access</h3>
+                            </li>
+                            <li>
+                                <h4>Kid-Friendly Environment?</h4>
+                                <p>Absolutely! The exhibition is suitable for all ages, with unique interactive sections for children.</p>
+                            </li>
+                            <li>
+                                <h4>Arrival Time for Scheduled Sessions?</h4>
+                                <p>We recommend to arrive within 15 minutes of your scheduled session to ensure a smooth entry process.</p>
+                            </li>
+                            <li>
+                                <h4>Late Arrivals?</h4>
+                                <p>Latecomers will be accommodated based on availability in subsequent time slots.</p>
+                            </li>
+                            <li>
+                                <h4>Prohibited Items?</h4>
+                                <p>Prohibited items include large bags, food and beverages from outside, and tripods. Flash photography is not allowed inside the exhibition.</p>
+                            </li>
+                            <li>
+                                <h4>Smoking and Vaping Policy?</h4>
+                                <p>Smoking and vaping are strictly prohibited within the exhibition space.</p>
+                            </li>
+                            <li>
+                                <h4>Parking Facilities?</h4>
+                                <p>The Phoenix Convention Center offers ample parking facilities. View parking options.</p>
+                            </li>
+                            <li>
+                                <h4>Accessibility and Special Accommodations?</h4>
+                                <p>The venue is fully accessible for wheelchairs. For special accommodations, please get in touch with our support team in advance.</p>
                             </li>
                         </ul>
                         <ul class="tickets">
                             <li>
                                 <h3>Tickets</h3>
                             </li>
+                            <li>
+                                <h4>Ticket Purchase Locations?</h4>
+                                <p>Tickets can be purchased online through our <a href="#tickets">ticketing page</a> or at the venue's ticket booth.</p>
+                            </li>
+                            <li>
+                                <h4>Different Ticket Options and Prices?</h4>
+                                <p>Various ticket options are available, including standard, student, senior, and group discounts. Visit our ticketing page for detailed pricing information.</p>
+                            </li>
+                            <li>
+                                <h4>Ticket Rescheduling and Transfer?</h4>
+                                <p>Tickets can be rescheduled or transferred to another person through our online ticketing system.</p>
+                            </li>
+                            <li>
+                                <h4>Refund and Exchange Policy?</h4>
+                                <p>We offer a flexible refund and exchange policy under certain conditions. Please refer to our ticketing terms for more details.</p>
+                            </li>
+                            <li>
+                                <h4>Group Discounts Available?</h4>
+                                <p>Yes, we offer discounts for groups. Please get in touch with our group sales department for more information.</p>
+                            </li>
                         </ul>
                         <ul class="misc">
                             <li>
                                 <h3>Miscellaneous</h3>
+                            </li>
+                            <li>
+                                <h4>Photography Guidelines?</h4>
+                                <p>Personal photography is allowed and encouraged, but please respect other visitors' experiences.</p>
+                            </li>
+                            <li>
+                                <h4>Dress Code for the Exhibition?</h4>
+                                <p>There is no specific dress code. We recommend comfortable attire suitable for an indoor event.</p>
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
         </section>
-        <section id="tickets" class="marble">
+        <section id="tickets" class="marble hidden">
             <div class="wrapper">
                 <h1>Purchase Tickets</h1>
                 <div class="grid-wrapper">
@@ -290,264 +369,266 @@
                                   </svg>
                             </button>
                         </div>
-                        <div class="tickets">
-                            <hr>
-                            <div class="ticket">
-                                <div>
+                        <div class="ticket-total">
+                            <div class="tickets">
+                                <hr>
+                                <div class="ticket">
                                     <div>
-                                        <span class="info">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
-                                                <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
-                                            </svg>
-                                        </span>
-                                        <span class="description">Adult</span>
+                                        <div>
+                                            <span class="info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                    <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
+                                                    <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
+                                                </svg>
+                                            </span>
+                                            <span class="description">Adult</span>
+                                        </div>
+                                        <span class="price">$29.95</span>
                                     </div>
-                                    <span class="price">$29.95</span>
+                                    <div class="control">
+                                        <button class="limit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"/>
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
+                                                <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
+                                              </svg>
+                                        </button>
+                                        <span class="qty">0</span>
+                                        <button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect y="0.5" width="24" height="24" rx="12"/>
+                                                <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
+                                              </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="control">
-                                    <button class="limit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"/>
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
-                                            <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
-                                          </svg>
-                                    </button>
-                                    <span class="qty">0</span>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect y="0.5" width="24" height="24" rx="12"/>
-                                            <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
-                                          </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="ticket">
-                                <div>
+                                <hr>
+                                <div class="ticket">
                                     <div>
-                                        <span class="info">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
-                                                <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
-                                            </svg>
-                                        </span>
-                                        <span class="description">Adult</span>
+                                        <div>
+                                            <span class="info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                    <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
+                                                    <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
+                                                </svg>
+                                            </span>
+                                            <span class="description">Adult</span>
+                                        </div>
+                                        <span class="price">$29.95</span>
                                     </div>
-                                    <span class="price">$29.95</span>
+                                    <div class="control">
+                                        <button class="limit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"/>
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
+                                                <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
+                                              </svg>
+                                        </button>
+                                        <span class="qty">0</span>
+                                        <button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect y="0.5" width="24" height="24" rx="12"/>
+                                                <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
+                                              </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="control">
-                                    <button class="limit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"/>
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
-                                            <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
-                                          </svg>
-                                    </button>
-                                    <span class="qty">0</span>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect y="0.5" width="24" height="24" rx="12"/>
-                                            <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
-                                          </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="ticket">
-                                <div>
+                                <hr>
+                                <div class="ticket">
                                     <div>
-                                        <span class="info">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
-                                                <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
-                                            </svg>
-                                        </span>
-                                        <span class="description">Adult</span>
+                                        <div>
+                                            <span class="info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                    <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
+                                                    <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
+                                                </svg>
+                                            </span>
+                                            <span class="description">Adult</span>
+                                        </div>
+                                        <span class="price">$29.95</span>
                                     </div>
-                                    <span class="price">$29.95</span>
+                                    <div class="control">
+                                        <button class="limit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"/>
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
+                                                <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
+                                              </svg>
+                                        </button>
+                                        <span class="qty">0</span>
+                                        <button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect y="0.5" width="24" height="24" rx="12"/>
+                                                <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
+                                              </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="control">
-                                    <button class="limit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"/>
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
-                                            <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
-                                          </svg>
-                                    </button>
-                                    <span class="qty">0</span>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect y="0.5" width="24" height="24" rx="12"/>
-                                            <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
-                                          </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="ticket">
-                                <div>
+                                <hr>
+                                <div class="ticket">
                                     <div>
-                                        <span class="info">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
-                                                <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
-                                            </svg>
-                                        </span>
-                                        <span class="description">Adult</span>
+                                        <div>
+                                            <span class="info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                    <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
+                                                    <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
+                                                </svg>
+                                            </span>
+                                            <span class="description">Adult</span>
+                                        </div>
+                                        <span class="price">$29.95</span>
                                     </div>
-                                    <span class="price">$29.95</span>
+                                    <div class="control">
+                                        <button class="limit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"/>
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
+                                                <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
+                                              </svg>
+                                        </button>
+                                        <span class="qty">0</span>
+                                        <button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect y="0.5" width="24" height="24" rx="12"/>
+                                                <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
+                                              </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="control">
-                                    <button class="limit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"/>
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
-                                            <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
-                                          </svg>
-                                    </button>
-                                    <span class="qty">0</span>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect y="0.5" width="24" height="24" rx="12"/>
-                                            <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
-                                          </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="ticket">
-                                <div>
+                                <hr>
+                                <div class="ticket">
                                     <div>
-                                        <span class="info">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
-                                                <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
-                                            </svg>
-                                        </span>
-                                        <span class="description">Adult</span>
+                                        <div>
+                                            <span class="info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                    <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
+                                                    <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
+                                                </svg>
+                                            </span>
+                                            <span class="description">Adult</span>
+                                        </div>
+                                        <span class="price">$29.95</span>
                                     </div>
-                                    <span class="price">$29.95</span>
+                                    <div class="control">
+                                        <button class="limit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"/>
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
+                                                <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
+                                              </svg>
+                                        </button>
+                                        <span class="qty">0</span>
+                                        <button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect y="0.5" width="24" height="24" rx="12"/>
+                                                <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
+                                              </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="control">
-                                    <button class="limit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"/>
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
-                                            <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
-                                          </svg>
-                                    </button>
-                                    <span class="qty">0</span>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect y="0.5" width="24" height="24" rx="12"/>
-                                            <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
-                                          </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="ticket">
-                                <div>
+                                <hr>
+                                <div class="ticket">
                                     <div>
-                                        <span class="info">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
-                                                <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
-                                            </svg>
-                                        </span>
-                                        <span class="description">Adult</span>
+                                        <div>
+                                            <span class="info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                    <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
+                                                    <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
+                                                </svg>
+                                            </span>
+                                            <span class="description">Adult</span>
+                                        </div>
+                                        <span class="price">$29.95</span>
                                     </div>
-                                    <span class="price">$29.95</span>
+                                    <div class="control">
+                                        <button class="limit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"/>
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
+                                                <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
+                                              </svg>
+                                        </button>
+                                        <span class="qty">0</span>
+                                        <button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect y="0.5" width="24" height="24" rx="12"/>
+                                                <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
+                                              </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="control">
-                                    <button class="limit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"/>
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
-                                            <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
-                                          </svg>
-                                    </button>
-                                    <span class="qty">0</span>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect y="0.5" width="24" height="24" rx="12"/>
-                                            <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
-                                          </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="ticket">
-                                <div>
+                                <hr>
+                                <div class="ticket">
                                     <div>
-                                        <span class="info">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
-                                                <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
-                                            </svg>
-                                        </span>
-                                        <span class="description">Adult</span>
+                                        <div>
+                                            <span class="info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                    <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
+                                                    <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
+                                                </svg>
+                                            </span>
+                                            <span class="description">Adult</span>
+                                        </div>
+                                        <span class="price">$29.95</span>
                                     </div>
-                                    <span class="price">$29.95</span>
+                                    <div class="control">
+                                        <button class="limit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"/>
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
+                                                <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
+                                              </svg>
+                                        </button>
+                                        <span class="qty">0</span>
+                                        <button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect y="0.5" width="24" height="24" rx="12"/>
+                                                <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
+                                              </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="control">
-                                    <button class="limit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"/>
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
-                                            <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
-                                          </svg>
-                                    </button>
-                                    <span class="qty">0</span>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect y="0.5" width="24" height="24" rx="12"/>
-                                            <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
-                                          </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="ticket">
-                                <div>
+                                <hr>
+                                <div class="ticket">
                                     <div>
-                                        <span class="info">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
-                                                <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
-                                            </svg>
-                                        </span>
-                                        <span class="description">Adult</span>
+                                        <div>
+                                            <span class="info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                    <path d="M12.2582 8.52434C11.7927 8.44449 11.314 8.53197 10.9068 8.77129C10.4996 9.0106 10.1902 9.38631 10.0335 9.83187C9.85018 10.3529 9.27926 10.6266 8.75827 10.4434C8.23728 10.2601 7.96351 9.68917 8.14678 9.16818C8.46025 8.27707 9.07898 7.52565 9.89339 7.04702C10.7078 6.56839 11.6653 6.39343 12.5963 6.55313C13.5274 6.71283 14.3719 7.19688 14.9802 7.91955C15.5884 8.64207 15.9214 9.5565 15.9201 10.5009C15.9197 12.0313 14.7851 13.0419 13.9748 13.5821C13.5392 13.8725 13.1107 14.086 12.795 14.2263C12.6358 14.2971 12.5016 14.3508 12.405 14.3876C12.3566 14.4061 12.3174 14.4204 12.2888 14.4305L12.2541 14.4427L12.243 14.4465L12.2391 14.4478L12.2376 14.4483C12.2376 14.4483 12.2363 14.4487 11.9201 13.5L12.2363 14.4487C11.7124 14.6234 11.1461 14.3402 10.9714 13.8162C10.7969 13.2927 11.0796 12.7267 11.6028 12.5517L11.6188 12.5461C11.6342 12.5406 11.6594 12.5315 11.693 12.5187C11.7605 12.493 11.8607 12.4529 11.9827 12.3987C12.2296 12.289 12.551 12.1276 12.8654 11.918C13.555 11.4582 13.9201 10.9692 13.9201 10.5L13.9201 10.4985C13.9208 10.0262 13.7543 9.56889 13.4502 9.20755C13.146 8.84622 12.7238 8.60419 12.2582 8.52434Z"/>
+                                                    <path d="M12 16.5C11.4477 16.5 11 16.9477 11 17.5C11 18.0523 11.4477 18.5 12 18.5H12.01C12.5623 18.5 13.01 18.0523 13.01 17.5C13.01 16.9477 12.5623 16.5 12.01 16.5H12Z"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12.5C1 6.42487 5.92487 1.5 12 1.5C18.0751 1.5 23 6.42487 23 12.5C23 18.5751 18.0751 23.5 12 23.5C5.92487 23.5 1 18.5751 1 12.5ZM12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5Z"/>
+                                                </svg>
+                                            </span>
+                                            <span class="description">Adult</span>
+                                        </div>
+                                        <span class="price">$29.95</span>
                                     </div>
-                                    <span class="price">$29.95</span>
+                                    <div class="control">
+                                        <button class="limit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"/>
+                                                <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
+                                                <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
+                                              </svg>
+                                        </button>
+                                        <span class="qty">0</span>
+                                        <button>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <rect y="0.5" width="24" height="24" rx="12"/>
+                                                <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
+                                              </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="control">
-                                    <button class="limit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"/>
-                                            <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
-                                            <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
-                                          </svg>
-                                    </button>
-                                    <span class="qty">0</span>
-                                    <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                            <rect y="0.5" width="24" height="24" rx="12"/>
-                                            <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
-                                          </svg>
-                                    </button>
-                                </div>
+                                <hr>
                             </div>
-                            <hr>
                             <div class="total">
                                 <div>
                                     <h4>Total</h4>
@@ -561,7 +642,7 @@
                 </div>
             </div>
         </section>
-        <section id="giftshop" class="marble">
+        <section id="giftshop" class="marble hidden">
             <div class="wrapper">
                 <h1>Gift Shop</h1>
                 <div class="grid-wrapper">
@@ -756,7 +837,7 @@
                 </div>
             </div>
         </section>
-        <section id="checkout" class="marble">
+        <section id="checkout" class="marble hidden">
             <div class="wrapper">
                 <h1>Checkout</h1>
                 <div class="grid-wrapper">
@@ -877,33 +958,32 @@
     <footer>
         <div class="wrapper">
             <div>
-                <a href="#" id="logo"><img src="assets/img/logo-light.svg" alt="logo"></a>
-                <a href="#" class="btn">tickets</a>
+                <a href="#home" id="logo"><img src="assets/img/logo-light.svg" alt="logo"></a>
+                <a href="#tickets" class="btn">tickets</a>
             </div>
             <ul class="action">
                 <li><h4>Take Action</h4></li>
-                <li><a href="#">tickets</a></li>
-                <li><a href="#">gift shop</a></li>
+                <li><a href="#tickets">tickets</a></li>
+                <li><a href="#giftshop">gift shop</a></li>
             </ul>
             <ul class="learn">
                 <li><h4>Learn</h4></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">location</a></li>
-                <li><a href="#">information</a></li>
-                <li><a href="#">faq</a></li>
-                <li><a href="#">gallery</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#info">information</a></li>
+                <li><a href="#faq">faq</a></li>
+                <li><a href="#highlights">exhibits</a></li>
             </ul>
             <ul class="connect">
                 <li><h4>Connect</h4></li>
                 <li>
                     <ul class="social">
                         <li class="fb">
-                            <a href="#">
+                            <a href="https://facebook.com" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
                             </a>
                         </li>
                         <li class="ig">
-                            <a href="#">
+                            <a href="https://www.instagram.com" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                     <defs>
                                         <radialGradient id="igGradient" cx="30%" cy="107%" r="150%">
@@ -919,7 +999,7 @@
                             </a>
                         </li>
                         <li class="x">
-                            <a href="#">
+                            <a href="https://www.twitter.com" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
                             </a>
                         </li>

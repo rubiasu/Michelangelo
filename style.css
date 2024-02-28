@@ -294,13 +294,15 @@ nav ul li a:hover {
 nav ul li a.cta {
   background-color: var(--fresco-blue);
   color: var(--marble-white);
-  border: none;
+  border-color: var(--fresco-blue);
 }
 nav ul li a.active {
   border: 1px solid var(--chiaroscuro-charcoal);
   color: var(--marble-white);
   background-color: var(--chiaroscuro-charcoal);
   background-color: rgba(59, 58, 57, 0.4980392157);
+  pointer-events: none;
+  cursor: default;
 }
 nav ul li[homeLink] {
   display: none;
@@ -478,6 +480,12 @@ footer .wrapper > div a {
 footer .wrapper > div a:hover {
   color: var(--chiaroscuro-charcoal);
 }
+footer .wrapper > div a.active:not(#logo) {
+  color: var(--marble-white);
+  background-color: var(--sculpture-gray);
+  pointer-events: none;
+  cursor: default;
+}
 footer h4 {
   color: var(--marble-white);
 }
@@ -502,6 +510,11 @@ footer ul li a {
 }
 footer ul li a:hover {
   text-decoration: underline;
+}
+footer ul:not(.learn) .active {
+  color: var(--sculpture-gray);
+  pointer-events: none;
+  cursor: default;
 }
 footer .social {
   flex-direction: row;
@@ -658,7 +671,7 @@ footer .social .ig svg {
 }
 
 @media (width < 1337px) {
-  section .wrapper {
+  section .wrapper, footer .wrapper {
     padding-inline: 16px;
   }
 }
@@ -946,7 +959,7 @@ hr:first-of-type, hr:last-of-type {
   border: 1px solid var(--sculpture-gray);
 }
 
-.tickets, .cart-items {
+.tickets, .cart-items, .ticket-total {
   display: flex;
   flex-direction: column;
   gap: 16px;
