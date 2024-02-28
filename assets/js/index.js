@@ -2,6 +2,25 @@ import { createSignal, createEffect, createMemo } from './reactive.js';
 // Strict Mode
 "use strict";
 
+// Gift Shop Data
+const [products, setProducts] = createSignal([
+    { name: "When Art Was Epic (Creation of Adam) White T-Shirt", price: 24.95, qty: 0, img: "./assets/img/merch/whenartwasepeic.png", size: null },
+    { name: "Renaissance Vibes Never Die (David) Black T-Shirt", price: 24.95, qty: 0, img: "./assets/img/merch/renvibes.png", size: null },
+    { name: "From Stone To Masterpiece (La Pieta) Black T-Shirt", price: 24.95, qty: 0, img: "./assets/img/merch/stone2masterp.png", size: null },
+    { name: "8.5 x 11 Libyan Sibyl Sketch Book", price: 16.95, qty: 0, img: "./assets/img/merch/leaveyourmark.png" },
+    { name: "3.5 x 2.5 Magnet (Sistine Chapel Ceiling)", price: 4.95, qty: 0, img: "./assets/img/merch/Magnet.png" },
+    { name: "David Hand Detail Canvas Tote Bag", price: 24.95, qty: 0, img: "./assets/img/merch/tote.png" },
+]);
+
+// Derived State (for Totals)
+const totalProductPrice = createMemo(() => {
+    return products().reduce((total, product) => total + (product.price * product.qty), 0);
+});
+
+const totalProductQty = createMemo(() => {
+    return products().reduce((total, product) => total + product.qty, 0);
+});
+
 
 // Calendar Data
 const [currentMonthIndex, setCurrentMonthIndex] = createSignal(0); // Store selected month
@@ -49,6 +68,51 @@ const totalTicketQty = createMemo(() => {
 // Cart
 
 // Gift Shop
+function updateQuantity(productName, change) {
+    const oldProducts = products();
+    const index = oldProducts.findIndex(p => p.name === productName);
+    if (index !== -1) {
+        const newProducts = [...oldProducts];
+        newProducts[index].qty = Math.max(0, newProducts[index].qty + change);
+        setProducts(newProducts); // Update state
+    }
+}
+
+createEffect(() => {
+    const plusButtons = document.querySelectorAll('.plus');
+    const minusButtons = document.querySelectorAll('.minus');
+
+    plusButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.item');
+            const productName = item.querySelector('.description').textContent;
+            updateQuantity(productName, 1); 
+        });
+    });
+
+    minusButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.item');
+            const productName = item.querySelector('.description').textContent;
+            console.log(updateQuantity(productName, -1));
+            
+        });
+    });
+
+    function updateTotals() {
+        const totalDiv = document.querySelector('.total');
+        // totalDiv.querySelector('.qty').textContent = totalProductQty();
+        // totalDiv.querySelector('.price').textContent = `$${totalProductQty().toFixed(2)}`;
+        console.log(totalProductQty())
+    }
+});
+
+
+
+function addToCart() {
+
+}
+
 
 // Calendar
 createEffect(() => { // Calendar UI Generation
@@ -267,11 +331,11 @@ function createTicketDiv(ticket, container) { //Ticket Div UI
         const plusButton = controlDiv.querySelector('.plus');
         const qtySpan = controlDiv.querySelector('.qty');
 
-        minusButton.addEventListener('click', () => updateQuantity(ticket.name, -1));
-        plusButton.addEventListener('click', () => updateQuantity(ticket.name, 1));
+        minusButton.addEventListener('click', () => updateTicketQuantity(ticket.name, -1));
+        plusButton.addEventListener('click', () => updateTicketQuantity(ticket.name, 1));
 }
 
-function updateQuantity(ticketName, change) { // Quantity Update 
+function updateTicketQuantity(ticketName, change) { // Quantity Update 
     const tickets = ticketOptions(); 
     const index = tickets.findIndex(t => t.name === ticketName); 
 
@@ -336,6 +400,8 @@ const faqLink = document.querySelector('#faq .tickets a');
 
 const pages = document.querySelectorAll('main>section');
 
+const addToCartButtons = document.querySelectorAll('#giftshop .add')
+
 // Event Listeners
 navLinks.forEach(link => {
     link.addEventListener('click', activateLink);
@@ -346,4 +412,8 @@ footerLinks.forEach(link => {
 
 heroCTA.addEventListener('click', activateLink);
 faqLink.addEventListener('click', activateLink);
+
+addToCartButtons.forEach(link => {
+    link.addEventListener('click', addToCart);
+});
 
