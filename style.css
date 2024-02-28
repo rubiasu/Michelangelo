@@ -904,6 +904,7 @@ footer .social .ig svg {
   background-blend-mode: overlay;
   background-color: var(--renaissance-gold);
   background-image: url("assets/img/texture/fresco-1.png");
+  cursor: default;
 }
 .calendar ul {
   margin: 0;
@@ -912,6 +913,9 @@ footer .social .ig svg {
   grid-template-columns: repeat(7, 1fr);
   justify-items: center;
   align-items: center;
+}
+.calendar ul.hidden {
+  display: none;
 }
 .calendar ul li {
   font-size: 16px;
@@ -938,6 +942,9 @@ footer .social .ig svg {
   background-color: var(--renaissance-gold);
   background-image: url("assets/img/texture/fresco-1.png");
   font-weight: 600;
+}
+.calendar ul.week li:not(.blank).disabled {
+  color: var(--marble-white);
 }
 
 .grid-wrapper {
@@ -1046,10 +1053,13 @@ hr:first-of-type, hr:last-of-type {
   --min-width: 274px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--min-width), 1fr));
+  row-gap: 40px;
+  column-gap: 16px;
 }
 .merch .item {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 0.5rem;
   font-family: var(--text-button);
 }

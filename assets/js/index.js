@@ -4,7 +4,22 @@ import { createSignal, createEffect, createMemo } from './reactive.js';
 
 
 // Calendar Data
-const [selectedDate, setSelectedDate] = createSignal(null); // Store selected date
+const [currentMonthIndex, setCurrentMonthIndex] = createSignal(0); // Store selected month
+const [selectedDate, setSelectedDate] = createSignal(null); // Store selected day
+const [selectedTime, setselectedTime] = createSignal(null); // Store selected day
+
+const availableMonths =[
+    { name: 'Mar 2024', value: "2024-03"},
+    { name: 'Apr 2024', value: "2024-04"},
+    { name: 'May 2024', value: "2024-05"},
+    { name: 'Jun 2024', value: "2024-06"},
+    { name: 'Jul 2024', value: "2024-07"},
+    { name: 'Aug 2024', value: "2024-08"},
+    { name: 'Sep 2024', value: "2024-09"},
+    { name: 'Oct 2024', value: "2024-10"},
+    { name: 'Nov 2024', value: "2024-11"},
+    { name: 'Dec 2024', value: "2024-12"},
+];
 
 // Ticket Data
 const [ticketOptions, setTicketOptions] = createSignal([
@@ -19,7 +34,6 @@ const [ticketOptions, setTicketOptions] = createSignal([
         { name: "group Bundle", price: 27.45, qty: 0 }
 ]);
 
-console.log(ticketOptions);
 
 // Derived State (for Totals)
 const totalTicketPrice = createMemo(() => {
@@ -39,122 +53,136 @@ const totalTicketQty = createMemo(() => {
 // Calendar
 createEffect(() => { // Calendar UI Generation
     const monthsContainer = document.querySelector('.calendar .months');
-    const prevButton = document.querySelector('.calendar .prev');
-    const nextButton = document.querySelector('.calendar .next');
-
-    const availableMonths =[
-        { name: 'Mar 2024', value: "2024-03"},
-        { name: 'Apr 2024', value: "2024-04"},
-        { name: 'May 2024', value: "2024-05"},
-        { name: 'Jun 2024', value: "2024-06"},
-        { name: 'Jul 2024', value: "2024-07"},
-        { name: 'Aug 2024', value: "2024-08"},
-        { name: 'Sep 2024', value: "2024-09"},
-        { name: 'Oct 2024', value: "2024-10"},
-        { name: 'Nov 2024', value: "2024-11"},
-        { name: 'Dec 2024', value: "2024-12"},
-    ];
-
-    let currentMonthIndex = 0;
+    const prevButton = monthsContainer.querySelector('.prev');
+    const nextButton = monthsContainer.querySelector('.next');
+    const monthButtons = monthsContainer.querySelectorAll('.month');
 
     function updateMonthButtons() {
-        monthsContainer.innerHTML = ''; // Clear existing buttons
-
-        const prev = document.createElement('button');
-        prev.classList.add('arrow prev');
-        prev.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M10.4142 12L15.7071 6.70711C16.0976 6.31658 16.0976 5.68342 15.7071 5.29289C15.3166 4.90237 14.6834 4.90237 14.2929 5.29289L8.29289 11.2929C7.90237 11.6834 7.90237 12.3166 8.29289 12.7071L14.2929 18.7071C14.6834 19.0976 15.3166 19.0976 15.7071 18.7071C16.0976 18.3166 16.0976 17.6834 15.7071 17.2929L10.4142 12Z"/>
-        </svg>`
-
-        const next = document.createElement('button');
-        next.classList.add('arrow next');
-        next.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M9.70711 5.29289C9.31658 4.90237 8.68342 4.90237 8.29289 5.29289C7.90237 5.68342 7.90237 6.31658 8.29289 6.70711L13.5858 12L8.29289 17.2929C7.90237 17.6834 7.90237 18.3166 8.29289 18.7071C8.68342 19.0976 9.31658 19.0976 9.70711 18.7071L15.7071 12.7071C16.0976 12.3166 16.0976 11.6834 15.7071 11.2929L9.70711 5.29289Z"/>
-        </svg>`
-
-        const firstMonth = document.createElement('button');
-        firstMonth.classList.add('month');
-
-        const secondMonth = document.createElement('button');
-        secondMonth.classList.add('month');
-
-
-        // Create and append buttons for the current month pair
+    
         for (let i = 0; i < 2; i++) { 
-            const monthIndex = currentMonthIndex + i;
+            let monthIndex = (currentMonthIndex() + i) % availableMonths.length;
+            if (monthIndex < 0) {
+                monthIndex += availableMonths.length;
+            }
+            const month = availableMonths[monthIndex]; 
+    
+            if (i < monthButtons.length) {
+                monthButtons[i].textContent = month.name;
+                monthButtons[i].dataset.month = month.value;
+            }
+        } 
+        console.log(currentMonthIndex())
+        updateCalendarGrid();
+    }
 
-            // Handle wrapping around if we go past the end of availableMonths 
-            const actualIndex = monthIndex % availableMonths.length; 
-            const month = availableMonths[actualIndex]; 
+    function nextMonth() {
+        if (currentMonthIndex >= availableMonths.length - 1) {
+            setCurrentMonthIndex(0);
+        } 
+        else {
+            setCurrentMonthIndex(currentMonthIndex() + 1);
+        }
+        updateMonthButtons();
+    }
 
+    function prevMonth() {
+        if (currentMonthIndex <= 0) {
+            setCurrentMonthIndex(availableMonths.length - 1)
+        }
+        else {
+            setCurrentMonthIndex(currentMonthIndex() - 1);
+        }
+        updateMonthButtons();
+    }
 
-            /*
-            <div class="months">
-                <button class="arrow prev limit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M10.4142 12L15.7071 6.70711C16.0976 6.31658 16.0976 5.68342 15.7071 5.29289C15.3166 4.90237 14.6834 4.90237 14.2929 5.29289L8.29289 11.2929C7.90237 11.6834 7.90237 12.3166 8.29289 12.7071L14.2929 18.7071C14.6834 19.0976 15.3166 19.0976 15.7071 18.7071C16.0976 18.3166 16.0976 17.6834 15.7071 17.2929L10.4142 12Z"/>
-                        </svg>
-                </button>
-                <button class="month current">Mar 2024</button>
-                <button class="month">Apr 2024</button>
-                <button class="arrow next">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M9.70711 5.29289C9.31658 4.90237 8.68342 4.90237 8.29289 5.29289C7.90237 5.68342 7.90237 6.31658 8.29289 6.70711L13.5858 12L8.29289 17.2929C7.90237 17.6834 7.90237 18.3166 8.29289 18.7071C8.68342 19.0976 9.31658 19.0976 9.70711 18.7071L15.7071 12.7071C16.0976 12.3166 16.0976 11.6834 15.7071 11.2929L9.70711 5.29289Z"/>
-                        </svg>
-                </button>
-            </div>
-            */
-        
+    function updateCalendarGrid() {
+        const calendarGrid = document.querySelectorAll('.calendar .week');
+
+        const selectedMonth = availableMonths[currentMonthIndex()].value; 
+        const year = parseInt(selectedMonth.split('-')[0]);
+        const monthIndex = parseInt(selectedMonth.split('-')[1]) - 1;
+
+        const firstDay = new Date(year, monthIndex, 1);
+        const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+        const firstDayOfWeek = firstDay.getDay();
+
+        // Adding days from the previous month
+        calendarGrid[0].innerHTML = '';
+        for (let i = firstDayOfWeek - 1; i >= 0; i--) {  
+            const prevMonthDay = new Date(year, monthIndex, -i);
+            const dayElement = document.createElement('li');
+            dayElement.textContent = prevMonthDay.getDate();
+            dayElement.classList.add('disabled'); // Example styling 
+            calendarGrid[0].appendChild(dayElement);
+        }
+
+        // Adding days for the current month
+        let currentWeekIndex = 0; // Start with the first week 
+        for (let i = 1; i <= daysInMonth; i++) {
+            const dayElement = document.createElement('li');
+            dayElement.textContent = i;
+
+            // ... logic for available dates, weekends, etc ...
+
+            calendarGrid[currentWeekIndex].appendChild(dayElement);
+
+            // Move to the next week if the current one is full
+            if (calendarGrid[currentWeekIndex].children.length === 7) {
+                currentWeekIndex++; 
+                calendarGrid[currentWeekIndex].innerHTML = '';
+                calendarGrid[currentWeekIndex].classList.remove('disabled');
+
+            }
+        }
+        if (currentWeekIndex < 5) {
+            currentWeekIndex++;
+            calendarGrid[currentWeekIndex].innerHTML = '';
+            calendarGrid[currentWeekIndex].classList.add('disabled');
         }
     }
 
-    prevButton.addEventListener('click', () => {
-        currentMonthIndex--;
-        if (currentMonthIndex < 0) {
-            currentMonthIndex = availableMonths.length - 1; // Wrap to the end
+    function handleDateClick(dateElement) {
+        const currentlyActive = document.querySelector('.calendar .week li.active'); 
+        if (currentlyActive) {
+            currentlyActive.classList.remove('active');
         }
-        updateMonthButtons();
-        updateCalendarGrid(); // Update the calendar days
-    });
-
-    nextButton.addEventListener('click', () => {
-        currentMonthIndex = (currentMonthIndex + 1) % availableMonths.length;
-        updateMonthButtons();
-        updateCalendarGrid(); // Update the calendar days
-    });
-
-    // Initial rendering
-    updateMonthButtons();
-    // updateCalendarGrid();
-
-
-
-    const calendarContainer = document.querySelector('.calendar');
-
-    function generateCalendar(month, year) { 
-        // Logic to build the HTML for the calendar grid
-        // ...
-
-        calendarContainer.innerHTML = generatedCalendarHTML;
+        dateElement.classList.add('active');
+        const day = dateElement.textContent;
+        const selectedMonthValue = availableMonths[currentMonthIndex()].value; // Example: "2024-03"
+        const [year, month] = selectedMonthValue.split('-');  
+        setSelectedDate(`${year}-${month}-${day}`);
+        console.log(selectedDate());
     }
 
-    function updateCalendar() {
-        // ... generate the calendar based on current month/year
+    function handleTimeClick(timeElement) {
+        const currentlyActiveTime = document.querySelector('.times .btn.active');
+        if (currentlyActiveTime) {
+            currentlyActiveTime.classList.remove('active');
+        }
+        timeElement.classList.add('active');
+        const selectedTime = timeElement.textContent;  
+        setselectedTime(selectedTime);
     }
 
-    const dateElements = calendarContainer.querySelectorAll('.week li');
-    dateElements.forEach(dateEl => {
-        dateEl.addEventListener('click', () => {
-            const dateStr = dateEl.dataset.date;
-            if (availableDates().includes(dateStr)) { 
-                setSelectedDate(dateStr);
-            } 
+    prevButton.addEventListener('click', prevMonth); 
+    nextButton.addEventListener('click', nextMonth);
+    monthButtons[1].addEventListener('click', nextMonth); 
+    
+
+    const dateElements = document.querySelectorAll('.calendar .week li');
+    dateElements.forEach(dateElement => {
+        dateElement.addEventListener('click', () => {
+            handleDateClick(dateElement);
         });
     });
 
-    // ... logic to handle month navigation
+    const timeButtons = document.querySelectorAll('.times .btn');
+    timeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            handleTimeClick(button);
+        });
+    });
 
-    updateCalendar(); // Initial calendar display
 });
 
 // Tickets
@@ -168,7 +196,6 @@ createEffect(() => { // Tickets UI Generation
     });
 
     updateTotals();
-
     updateButton();
 
     function updateTotals() {
@@ -177,13 +204,17 @@ createEffect(() => { // Tickets UI Generation
         totalDiv.querySelector('.price').textContent = `$${totalTicketPrice().toFixed(2)}`;
     }
 
+    
     function updateButton() {
         const button = document.querySelector('#tickets .ticket-total .btn');
+        // const button = document.querySelector('#tickets .ticket-total .btn');
         let noTicket = (totalTicketQty() === 0); 
-        let noDate = true;
-        let noTime = true;
+        let noDate = !selectedDate();
+        let noTime = !selectedTime();
         button.disabled = (noTicket || noDate || noTime)
     }
+    const checkoutBtn = document.querySelector('#tickets .ticket-total .btn');
+    checkoutBtn.addEventListener('click', activateLink);
   
   });
 
@@ -254,7 +285,12 @@ function updateQuantity(ticketName, change) { // Quantity Update
 // Navigation
 function activateLink(event) { // Handle Links
     // Ignore External Links
-    const href = this.getAttribute('href');
+    let href;
+    if (this.getAttribute('href')) {
+        href = this.getAttribute('href');
+    } else {
+        href = '#checkout';
+    }
     if (!href.startsWith('#')) {
         return
     }
@@ -310,3 +346,4 @@ footerLinks.forEach(link => {
 
 heroCTA.addEventListener('click', activateLink);
 faqLink.addEventListener('click', activateLink);
+

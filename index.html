@@ -260,12 +260,12 @@
                         <div class="calendar">
                             <div class="header"><h4>Select Date and Session</h4></div>
                             <div class="months">
-                                <button class="arrow prev limit">
+                                <button class="arrow prev">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                         <path d="M10.4142 12L15.7071 6.70711C16.0976 6.31658 16.0976 5.68342 15.7071 5.29289C15.3166 4.90237 14.6834 4.90237 14.2929 5.29289L8.29289 11.2929C7.90237 11.6834 7.90237 12.3166 8.29289 12.7071L14.2929 18.7071C14.6834 19.0976 15.3166 19.0976 15.7071 18.7071C16.0976 18.3166 16.0976 17.6834 15.7071 17.2929L10.4142 12Z"/>
                                       </svg>
                                 </button>
-                                <button class="month current">Mar 2024</button>
+                                <button disabled class="month current">Mar 2024</button>
                                 <button class="month">Apr 2024</button>
                                 <button class="arrow next">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -283,11 +283,11 @@
                                 <li>S</li>
                             </ul>
                             <ul class="week">
-                                <li class="blank"></li>
-                                <li class="blank"></li>
-                                <li class="blank"></li>
-                                <li class="blank"></li>
-                                <li class="blank"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
                                 <li>1</li>
                                 <li>2</li>
                             </ul>
@@ -636,7 +636,7 @@
                                 </div>
                                 <span class="price">$0.00</span>
                             </div>
-                            <button disabled class="btn">Continue to Checkout</button>
+                            <button disabled class="btn checkout-btn">Continue to Checkout</button>
                         </div>
                     </div>
                 </div>
@@ -649,7 +649,7 @@
                     <div class="merch left">
                         <div class="item">
                             <img src="./assets/img/merch/whenartwasepeic.png" alt="product">
-                            <span class="description">Description</span>
+                            <span class="description">When Art Was Epic (Creation of Adam) White T-Shirt</span>
                             <div class="sizes">
                                 <button>XS</button>
                                 <button>S</button>
@@ -679,8 +679,8 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img src="./assets/img/merch/whenartwasepeic.png" alt="product">
-                            <span class="description">Description</span>
+                            <img src="./assets/img/merch/renvibes.png" alt="product">
+                            <span class="description">Renaissance Vibes Never Die (David) Black T-Shirt</span>
                             <div class="sizes">
                                 <button>XS</button>
                                 <button>S</button>
@@ -710,8 +710,8 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img src="./assets/img/merch/whenartwasepeic.png" alt="product">
-                            <span class="description">Description</span>
+                            <img src="./assets/img/merch/stone2masterp.png" alt="product">
+                            <span class="description">Frome Stone To Masterpiece (La Pieta) Black T-Shirt</span>
                             <div class="sizes">
                                 <button>XS</button>
                                 <button>S</button>
@@ -741,16 +741,9 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img src="./assets/img/merch/whenartwasepeic.png" alt="product">
-                            <span class="description">Description</span>
-                            <div class="sizes">
-                                <button>XS</button>
-                                <button>S</button>
-                                <button>M</button>
-                                <button>L</button>
-                                <button>XL</button>
-                            </div>
-                            <span class="price">$24.95</span>
+                            <img src="./assets/img/merch/leaveyourmark.png" alt="product">
+                            <span class="description">8.5 x 11 Libyan Sibyl Sketch Book</span>
+                            <span class="price">$16.95</span>
                             <div>
                                 <div class="control">
                                     <button>
@@ -772,15 +765,32 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img src="./assets/img/merch/whenartwasepeic.png" alt="product">
-                            <span class="description">Description</span>
-                            <div class="sizes">
-                                <button>XS</button>
-                                <button>S</button>
-                                <button>M</button>
-                                <button>L</button>
-                                <button>XL</button>
+                            <img src="./assets/img/merch/Magnet.png" alt="product">
+                            <span class="description">3.5 x 2.5 Magnet (Sistine Chapel Ceiling)</span>
+                            <span class="price">$4.95</span>
+                            <div>
+                                <div class="control">
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                            <rect x="1" y="1.5" width="22" height="22" rx="11"/>
+                                            <rect x="1" y="1.5" width="22" height="22" rx="11"  stroke-width="2"/>
+                                            <path d="M5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H5Z"/>
+                                          </svg>
+                                    </button>
+                                    <span class="qty">0</span>
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                            <rect y="0.5" width="24" height="24" rx="12"/>
+                                            <path d="M13 5.5C13 4.94772 12.5523 4.5 12 4.5C11.4477 4.5 11 4.94772 11 5.5V11.5H5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5H11V19.5C11 20.0523 11.4477 20.5 12 20.5C12.5523 20.5 13 20.0523 13 19.5V13.5H19C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5H13V5.5Z"/>
+                                          </svg>
+                                    </button>
+                                </div>
+                                <button class="add">Add to Cart</button>
                             </div>
+                        </div>
+                        <div class="item">
+                            <img src="./assets/img/merch/tote.png" alt="product">
+                            <span class="description">David Hand Detail Canvas Tote Bag</span>
                             <span class="price">$24.95</span>
                             <div>
                                 <div class="control">
