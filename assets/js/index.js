@@ -137,14 +137,20 @@ createEffect(() => { // Calendar UI Generation
         } 
         console.log(currentMonthIndex())
         updateCalendarGrid();
-
         const dateElements = document.querySelectorAll('.calendar .week li');
         dateElements.forEach(dateElement => {
             dateElement.addEventListener('click', () => {
             handleDateClick(dateElement);
+            });
+        });
+
+    }
+    const dateElements = document.querySelectorAll('.calendar .week li');
+    dateElements.forEach(dateElement => {
+        dateElement.addEventListener('click', () => {
+        handleDateClick(dateElement);
         });
     });
-    }
 
     function nextMonth() {
         if (currentMonthIndex >= availableMonths.length - 1) {
