@@ -137,6 +137,13 @@ createEffect(() => { // Calendar UI Generation
         } 
         console.log(currentMonthIndex())
         updateCalendarGrid();
+
+        const dateElements = document.querySelectorAll('.calendar .week li');
+        dateElements.forEach(dateElement => {
+            dateElement.addEventListener('click', () => {
+            handleDateClick(dateElement);
+        });
+    });
     }
 
     function nextMonth() {
@@ -232,14 +239,6 @@ createEffect(() => { // Calendar UI Generation
     nextButton.addEventListener('click', nextMonth);
     monthButtons[1].addEventListener('click', nextMonth); 
     
-
-    const dateElements = document.querySelectorAll('.calendar .week li');
-    dateElements.forEach(dateElement => {
-        dateElement.addEventListener('click', () => {
-            handleDateClick(dateElement);
-        });
-    });
-
     const timeButtons = document.querySelectorAll('.times .btn');
     timeButtons.forEach(button => {
         button.addEventListener('click', () => {
