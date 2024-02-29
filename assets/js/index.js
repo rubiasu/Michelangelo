@@ -120,6 +120,8 @@ createEffect(() => { // Calendar UI Generation
     const prevButton = monthsContainer.querySelector('.prev');
     const nextButton = monthsContainer.querySelector('.next');
     const monthButtons = monthsContainer.querySelectorAll('.month');
+    const timeButtons = document.querySelectorAll('.times .btn');
+
 
     function updateMonthButtons() {
     
@@ -135,7 +137,6 @@ createEffect(() => { // Calendar UI Generation
                 monthButtons[i].dataset.month = month.value;
             }
         } 
-        console.log(currentMonthIndex())
         updateCalendarGrid();
         const dateElements = document.querySelectorAll('.calendar .week li');
         dateElements.forEach(dateElement => {
@@ -160,6 +161,7 @@ createEffect(() => { // Calendar UI Generation
             setCurrentMonthIndex(currentMonthIndex() + 1);
         }
         updateMonthButtons();
+        checkSelectedDate();
     }
 
     function prevMonth() {
@@ -170,6 +172,7 @@ createEffect(() => { // Calendar UI Generation
             setCurrentMonthIndex(currentMonthIndex() - 1);
         }
         updateMonthButtons();
+        checkSelectedDate();
     }
 
     function updateCalendarGrid() {
@@ -231,6 +234,15 @@ createEffect(() => { // Calendar UI Generation
         console.log(selectedDate());
     }
 
+    function checkSelectedDate() {
+        const regex = /^(\d{4}-\d{2}).*/
+        const thisMonth = availableMonths[currentMonthIndex()].value;
+        return yearMonthMatch(thisMonth, selectedDate());
+        function yearMonthMatch(month, date) {
+            return regex.test(month) && regex.test(date) && month.match(regex)[1] === date.match(regex)[1];
+        }
+    }
+
     function handleTimeClick(timeElement) {
         const currentlyActiveTime = document.querySelector('.times .btn.active');
         if (currentlyActiveTime) {
@@ -245,7 +257,6 @@ createEffect(() => { // Calendar UI Generation
     nextButton.addEventListener('click', nextMonth);
     monthButtons[1].addEventListener('click', nextMonth); 
     
-    const timeButtons = document.querySelectorAll('.times .btn');
     timeButtons.forEach(button => {
         button.addEventListener('click', () => {
             handleTimeClick(button);
@@ -397,10 +408,22 @@ function activateLink(event) { // Handle Links
 
 }
 
+function switchSlide() { // Handle Carousel
+    let href;
+    if (this.getAttribute('href')) {
+        href = this.getAttribute('href');
+    }
+    carouselLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    this.classList.add('active');
+}
+
 // Global Selectors
 const navLinks = document.querySelectorAll('nav a');
 const footerLinks = document.querySelectorAll('footer a');
 const heroCTA = document.querySelector('#hero .cta a');
+const carouselLinks = document.querySelectorAll('#hero .carousel-nav a');
 const faqLink = document.querySelector('#faq .tickets a');
 
 const pages = document.querySelectorAll('main>section');
@@ -413,6 +436,9 @@ navLinks.forEach(link => {
 });
 footerLinks.forEach(link => {
     link.addEventListener('click', activateLink);
+});
+carouselLinks.forEach(link => {
+    link.addEventListener('click', switchSlide);
 });
 
 heroCTA.addEventListener('click', activateLink);
