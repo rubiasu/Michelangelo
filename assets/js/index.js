@@ -68,25 +68,20 @@ const totalTicketQty = createMemo(() => {
 // Cart
 
 // Gift Shop
-function updateQuantity(productName, change) {
-    const oldProducts = products();
-    const index = oldProducts.findIndex(p => p.name === productName);
-    if (index !== -1) {
-        const newProducts = [...oldProducts];
-        newProducts[index].qty = Math.max(0, newProducts[index].qty + change);
-        setProducts(newProducts); // Update state
-    }
-}
+
 
 createEffect(() => {
     const plusButtons = document.querySelectorAll('.plus');
     const minusButtons = document.querySelectorAll('.minus');
+    const sizeButtons = document.querySelectorAll('.item .sizes button')
 
     plusButtons.forEach(button => {
         button.addEventListener('click', () => {
+            // const item = button.parentElement.parentElement.parentElement('.item');
             const item = button.closest('.item');
             const productName = item.querySelector('.description').textContent;
             updateQuantity(productName, 1); 
+            // console.log(productName);
         });
     });
 
@@ -99,11 +94,52 @@ createEffect(() => {
         });
     });
 
+    sizeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.item');
+            const productName = item.querySelector('.description').textContent;
+            const currentButtons = item.querySelectorAll('.sizes button');
+            const size = button.textContent;
+    
+            // Remove 'active' from other buttons in the same item
+            currentButtons.forEach(otherButton => {
+                if (otherButton !== button) {  // Don't remove from the clicked button
+                    otherButton.classList.remove('active'); 
+                }
+            });
+    
+            // Add 'active' to the clicked button.
+            button.classList.add('active'); 
+            updateSize(productName, size)
+        });
+    });
+
     function updateTotals() {
         const totalDiv = document.querySelector('.total');
         // totalDiv.querySelector('.qty').textContent = totalProductQty();
         // totalDiv.querySelector('.price').textContent = `$${totalProductQty().toFixed(2)}`;
         console.log(totalProductQty())
+    }
+
+    function updateQuantity(productName, change) {
+        const oldProducts = products();
+        const index = oldProducts.findIndex(p => p.name === productName);
+        if (index !== -1) {
+            const newProducts = [...oldProducts];
+            newProducts[index].qty = Math.max(0, newProducts[index].qty + change);
+            setProducts(newProducts);  
+        }
+    }
+
+    function updateSize(productName, size) {
+        const oldProducts = products();
+        const index = oldProducts.findIndex(p => p.name === productName);
+        if (index !== -1) {
+            const newProducts = [...oldProducts]; 
+            newProducts[index].size = size; 
+            setProducts(newProducts);
+            // console.log(products())
+        } 
     }
 });
 
