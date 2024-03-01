@@ -68,8 +68,6 @@ const totalTicketQty = createMemo(() => {
 // Cart
 
 // Gift Shop
-
-
 createEffect(() => {
     const plusButtons = document.querySelectorAll('.plus');
     const minusButtons = document.querySelectorAll('.minus');
@@ -80,7 +78,7 @@ createEffect(() => {
             // const item = button.parentElement.parentElement.parentElement('.item');
             const item = button.closest('.item');
             const productName = item.querySelector('.description').textContent;
-            updateQuantity(productName, 1); 
+            updateQuantity(productName, 1, item); 
             // console.log(productName);
         });
     });
@@ -89,7 +87,7 @@ createEffect(() => {
         button.addEventListener('click', () => {
             const item = button.closest('.item');
             const productName = item.querySelector('.description').textContent;
-            console.log(updateQuantity(productName, -1));
+            updateQuantity(productName, -1, item);
             
         });
     });
@@ -121,13 +119,15 @@ createEffect(() => {
         console.log(totalProductQty())
     }
 
-    function updateQuantity(productName, change) {
+    function updateQuantity(productName, change, item) {
         const oldProducts = products();
         const index = oldProducts.findIndex(p => p.name === productName);
+        const qtySpan = item.querySelector('.qty');
         if (index !== -1) {
             const newProducts = [...oldProducts];
             newProducts[index].qty = Math.max(0, newProducts[index].qty + change);
-            setProducts(newProducts);  
+            setProducts(newProducts);
+            qtySpan.textContent = newProducts[index].qty;
         }
     }
 
